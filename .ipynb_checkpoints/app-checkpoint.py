@@ -98,3 +98,7 @@ fig.update_layout(template="plotly_dark", height=400)
 st.plotly_chart(fig, use_container_width=True)
 
 st.info("✨ This ML model predicts next trading day's price using latest market data.")
+
+
+
+
