@@ -1,0 +1,8 @@
+streamlit
+yfinance==0.2.31
+tensorflow-cpu==2.10.0
+scikit-learn
+pandas
+numpy
+plotly
+requests
