@@ -1,8 +1,9 @@
 streamlit
 yfinance
-tensorflow==2.11.0
-scikit-learn
 pandas
 numpy
+scikit-learn
 plotly
+requests
+
 
