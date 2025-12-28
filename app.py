@@ -2,7 +2,7 @@ import streamlit as st
 import yfinance as yf
 import numpy as np
 import pandas as pd
-#from tensorflow.keras.models import load_model
+from tensorflow.keras.models import load_model
 from sklearn.preprocessing import MinMaxScaler
 import plotly.express as px
 
@@ -13,10 +13,7 @@ st.title("📈 TCS Next-Day Stock Price Prediction (LSTM Model)")
 # 1️⃣ Load Model
 # ------------------------------------------------
 try:
-   # model = load_model("models/tcs_lstm_model.h5")
-    # from tensorflow.keras.models import load_model
-st.warning("⚠️ Prediction temporarily disabled. TensorFlow setup in progress.")
-pred = None
+    model = load_model("models/tcs_lstm_model.h5")
 except:
     st.error("❌ Model file missing! Put `tcs_lstm_model.h5` inside `/models/` folder.")
     st.stop()
