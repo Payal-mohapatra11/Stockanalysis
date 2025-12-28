@@ -22,7 +22,7 @@ scaled_data = scaler.fit_transform(tcs)
 last_60 = scaled_data[-60:].reshape(1,60,1)
 pred_scaled = model.predict(last_60)
 predicted_price = scaler.inverse_transform(pred_scaled)[0][0]
-
+pred = float(predicted_price)  # ✔ Convert to float
 # 🔥 Current price
 current_price = tcs['Close'].iloc[-1]
 
@@ -31,13 +31,12 @@ st.subheader("📌 Latest TCS Close Price:")
 st.write(round(current_price,2))
 
 st.subheader("🔮 Predicted Next Day Price:")
-st.write(round(predicted_price,2))
+st.write(round(pred,2))
 
 # 🔁 Trend Direction
-if predicted_price > current_price:
+if pred > current_price:
     st.success("🚀 **Uptrend Expected — BUY Signal (not financial advice)**")
 else:
     st.error("📉 **Downtrend Expected — SELL Signal (not financial advice)**")
-
 # 📊 Chart
 st.line_chart(tcs['Close'])
