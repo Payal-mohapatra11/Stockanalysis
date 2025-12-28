@@ -1,6 +1,11 @@
 streamlit
-pandas
-numpy
-tensorflow==2.14.0
-scikit-learn
 yfinance
+pandas
+scikit-learn
+numpy
+plotly
+joblib
+
+
+
+

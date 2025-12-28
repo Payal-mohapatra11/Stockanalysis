@@ -2,7 +2,7 @@ import streamlit as st
 import yfinance as yf
 import numpy as np
 import pandas as pd
-from tensorflow.keras.models import load_model
+import joblib
 from sklearn.preprocessing import MinMaxScaler
 import plotly.express as px
 
@@ -13,7 +13,8 @@ st.title("📈 TCS Next-Day Stock Price Prediction (LSTM Model)")
 # 1️⃣ Load Model
 # ------------------------------------------------
 try:
-    model = load_model("models/tcs_lstm_model.h5")
+    model = joblib.load("models/tcs_sklearn_model.pkl")
+    st.success("📌 Model Loaded Successfully!")
 except:
     st.error("❌ Model file missing! Put `tcs_lstm_model.h5` inside `/models/` folder.")
     st.stop()
